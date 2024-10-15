@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.49">
+    <root id="1"/>
+    <schema id="2" parent="1" name="information_schema">
+      <CollationName>utf8_general_ci</CollationName>
+    </schema>
+    <schema id="3" parent="1" name="apsfc">
+      <CollationName>utf8_general_ci</CollationName>
+    </schema>
+    <schema id="4" parent="1" name="dataexam">
+      <CollationName>utf8_bin</CollationName>
+    </schema>
+    <schema id="5" parent="1" name="db_crud">
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </schema>
+    <schema id="6" parent="1" name="examination_system">
+      <CollationName>utf8_bin</CollationName>
+    </schema>
+    <schema id="7" parent="1" name="jf">
+      <CollationName>gb2312_chinese_ci</CollationName>
+    </schema>
+    <schema id="8" parent="1" name="mybatis">
+      <IntrospectionTimestamp>2024-09-26.03:23:52</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2024-09-25.11:23:52</LocalIntrospectionTimestamp>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </schema>
+    <schema id="9" parent="1" name="mysql">
+      <CollationName>utf8_general_ci</CollationName>
+    </schema>
+    <schema id="10" parent="1" name="performance_schema">
+      <CollationName>utf8_general_ci</CollationName>
+    </schema>
+    <schema id="11" parent="1" name="sakila">
+      <CollationName>utf8_general_ci</CollationName>
+    </schema>
+    <schema id="12" parent="1" name="sys">
+      <CollationName>utf8_general_ci</CollationName>
+    </schema>
+    <schema id="13" parent="1" name="user">
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </schema>
+    <schema id="14" parent="1" name="users">
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </schema>
+    <schema id="15" parent="1" name="world">
+      <CollationName>utf8_general_ci</CollationName>
+    </schema>
+    <table id="16" parent="8" name="t_customer">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="17" parent="8" name="t_student">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="18" parent="8" name="tb_book">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="19" parent="8" name="tb_idcard">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="20" parent="8" name="tb_orders">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="21" parent="8" name="tb_ordersitem">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="22" parent="8" name="tb_person">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="23" parent="8" name="tb_product">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="24" parent="8" name="tb_user">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <column id="25" parent="16" name="id">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="26" parent="16" name="phone">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="27" parent="16" name="jobs">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="28" parent="16" name="username">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <index id="29" parent="16" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="30" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="31" parent="17" name="id">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="32" parent="17" name="name">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="33" parent="17" name="age">
+      <DasType>int(11)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="34" parent="17" name="sex">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <index id="35" parent="17" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="36" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="37" parent="18" name="id">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="38" parent="18" name="bookName">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="39" parent="18" name="price">
+      <DasType>double(10,2 digit)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="40" parent="18" name="author">
+      <DasType>varchar(40)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="41" parent="19" name="id">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="42" parent="19" name="phone">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="43" parent="19" name="code">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <index id="44" parent="19" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="45" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="46" parent="20" name="id">
+      <DasType>int(32)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="47" parent="20" name="number">
+      <DasType>varchar(32)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="48" parent="20" name="user_id">
+      <DasType>int(32)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <index id="49" parent="20" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="50" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="51" parent="21" name="id">
+      <DasType>int(32)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="52" parent="21" name="orders_id">
+      <DasType>int(32)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="53" parent="21" name="product_id">
+      <DasType>int(32)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <index id="54" parent="21" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="55" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="56" parent="22" name="id">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="57" parent="22" name="name">
+      <DasType>varchar(32)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="58" parent="22" name="age">
+      <DasType>int(11)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="59" parent="22" name="sex">
+      <DasType>varchar(8)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="60" parent="22" name="card_id">
+      <DasType>int(255)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <index id="61" parent="22" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="62" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="63" parent="23" name="id">
+      <DasType>int(32)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="64" parent="23" name="NAME">
+      <DasType>varchar(32)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="65" parent="23" name="price">
+      <DasType>decimal(10,2 digit)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <index id="66" parent="23" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="67" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="68" parent="24" name="id">
+      <DasType>int(32)|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="69" parent="24" name="username">
+      <DasType>varchar(32)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="70" parent="24" name="address">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+  </database-model>
+</dataSource>
