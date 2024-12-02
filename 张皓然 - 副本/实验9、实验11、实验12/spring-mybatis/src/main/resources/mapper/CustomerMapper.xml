@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.dao.CustomerMapper">
+
+    <!-- 查询所有客户 -->
+    <select id="listCustomers" resultType="com.example.entity.Customer">
+        SELECT * FROM Customer
+    </select>
+
+    <!-- 根据参数查询客户 -->
+    <select id="listCustomersByParams" parameterType="map" resultType="com.example.entity.Customer">
+        SELECT * FROM Customer
+        <where>
+            <if test="customerName != null and customerName != ''">
+                AND customerName LIKE CONCAT('%', #{customerName}, '%')
+            </if>
+            <if test="customerGender != null and customerGender != ''">
+                AND customerGender = #{customerGender}
+            </if>
+            <if test="customerPhone != null and customerPhone != ''">
+                AND customerPhone LIKE CONCAT('%', #{customerPhone}, '%')
+            </if>
+            <if test="customerEmail != null and customerEmail != ''">
+                AND customerEmail LIKE CONCAT('%', #{customerEmail}, '%')
+            </if>
+        </where>
+    </select>
+
+    <!-- 添加一个新客户 -->
+    <insert id="insertCustomer" parameterType="com.example.entity.Customer">
+        INSERT INTO Customer (customerName, customerGender, customerAge, customerPhone, customerEmail, customerAddress)
+        VALUES (#{customerName}, #{customerGender}, #{customerAge}, #{customerPhone}, #{customerEmail}, #{customerAddress})
+    </insert>
+
+    <!-- 更新一个客户的信息 -->
+    <update id="updateCustomer" parameterType="com.example.entity.Customer">
+        UPDATE Customer
+        SET customerName = #{customerName},
+            customerGender = #{customerGender},
+            customerAge = #{customerAge},
+            customerPhone = #{customerPhone},
+            customerEmail = #{customerEmail},
+            customerAddress = #{customerAddress}
+        WHERE customerId = #{customerId}
+    </update>
+
+    <!-- 根据ID删除一个客户 -->
+    <delete id="deleteCustomerById" parameterType="int">
+        DELETE FROM Customer WHERE customerId = #{id}
+    </delete>
+
+    <!-- 根据ID查询一个客户 -->
+    <select id="getCustomerById" parameterType="int" resultType="com.example.entity.Customer">
+        SELECT * FROM Customer WHERE customerId = #{id}
+    </select>
+
+    <!-- 根据多个ID删除多个客户 -->
+    <delete id="deleteCustomers" parameterType="java.util.List">
+        DELETE FROM Customer WHERE customerId IN
+        <foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+</mapper>

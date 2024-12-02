@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.dao.BookMapper">
+
+    <!-- 查询所有书籍 -->
+    <select id="listBooks" resultType="com.example.entity.Book">
+        SELECT * FROM book
+    </select>
+
+    <!-- 根据参数查询书籍 -->
+    <select id="listBooksByParams" parameterType="map" resultType="com.example.entity.Book">
+        SELECT * FROM book
+        <where>
+            <if test="title != null and title != ''">
+                AND title LIKE CONCAT('%', #{title}, '%')
+            </if>
+            <if test="author != null and author != ''">
+                AND author LIKE CONCAT('%', #{author}, '%')
+            </if>
+            <if test="publisher != null and publisher != ''">
+                AND publisher LIKE CONCAT('%', #{publisher}, '%')
+            </if>
+        </where>
+    </select>
+
+    <!-- 添加一本新书 -->
+    <insert id="insertBook" parameterType="com.example.entity.Book">
+        INSERT INTO book (title, author, publisher, publish_date, remarks)
+        VALUES (#{title}, #{author}, #{publisher}, #{publishDate}, #{remarks})
+    </insert>
+
+    <!-- 更新一本书的信息 -->
+    <update id="updateBook" parameterType="com.example.entity.Book">
+        UPDATE book
+        SET title = #{title},
+            author = #{author},
+            publisher = #{publisher},
+            publish_date = #{publishDate},
+            remarks = #{remarks}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 根据ID删除一本书 -->
+    <delete id="deleteBookById" parameterType="int">
+        DELETE FROM book WHERE id = #{id}
+    </delete>
+
+    <!-- 根据ID查询一本书 -->
+    <select id="getBookById" parameterType="int" resultType="com.example.entity.Book">
+        SELECT * FROM book WHERE id = #{id}
+    </select>
+
+    <!-- 根据多个ID删除多本书 -->
+    <delete id="deleteBooks" parameterType="java.util.List">
+        DELETE FROM book WHERE id IN
+        <foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+</mapper>
